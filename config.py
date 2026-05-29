@@ -43,7 +43,7 @@ DEBUG = os.getenv("DEBUG", "True").lower() == "true"
 
 ALLOWED_ORIGINS = os.getenv(
     "ALLOWED_ORIGINS",
-    "http://localhost:3000,http://localhost:8000"
+    "https://legal-ai-frontend-two.vercel.app/"
 ).split(",")
 
 # ─────────────────────────────────────────────────────────────
@@ -59,9 +59,8 @@ DATABASE_URL = os.getenv(
 # Redis
 # ─────────────────────────────────────────────────────────────
 
-REDIS_URL = os.getenv(
-    "REDIS_URL",
-    "redis://localhost:6379/0"
+from db.redis_client import (
+    redis_client
 )
 
 # ─────────────────────────────────────────────────────────────

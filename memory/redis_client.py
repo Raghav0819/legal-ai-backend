@@ -1,13 +1,5 @@
 import redis
 
-from config import REDIS_URL
-
-# ─────────────────────────────────────────────
-# Redis client
-# ─────────────────────────────────────────────
-
-redis_client = redis.Redis.from_url(
-    REDIS_URL,
-
-    decode_responses=True,
+from db.redis_client import (
+    redis_client
 )
