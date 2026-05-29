@@ -80,10 +80,7 @@ ACCESS_TOKEN_EXPIRE_DAYS = 7
 # Embedding model
 # ─────────────────────────────────────────────────────────────
 
-EMBED_MODEL_NAME = (
-    "sentence-transformers/"
-    "paraphrase-multilingual-MiniLM-L12-v2"
-)
+EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
 
 EMBED_DIMENSION = 384
 
