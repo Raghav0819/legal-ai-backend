@@ -356,7 +356,6 @@ class LegalAidOrchestrator:
             else "format"
         )
 
-
 # ─────────────────────────────────────────────
 # Singleton
 # ─────────────────────────────────────────────
@@ -370,8 +369,14 @@ def get_orchestrator():
 
     if _orchestrator_instance is None:
 
+        logger.info(
+            "Creating orchestrator instance..."
+        )
+
         _orchestrator_instance = (
             LegalAidOrchestrator()
         )
 
     return _orchestrator_instance
+
+

@@ -44,7 +44,7 @@ from db.session import (
     get_db,
 )
 
-# IMPORTANT
+# IMPORTANT:
 # Import models BEFORE create_all
 
 from db.models.conversation import (
@@ -53,12 +53,6 @@ from db.models.conversation import (
 
 from db.models.message import (
     Message,
-)
-
-# Create tables automatically
-
-Base.metadata.create_all(
-    bind=engine
 )
 
 # ─────────────────────────────────────────────
@@ -92,8 +86,6 @@ from memory.memory_manager import (
     save_message,
 )
 
-import config
-
 # ─────────────────────────────────────────────
 # Allowed Origins
 # ─────────────────────────────────────────────
@@ -126,6 +118,25 @@ app = FastAPI(
 
     version="7.0.0",
 )
+
+# ─────────────────────────────────────────────
+# Startup Event
+# ─────────────────────────────────────────────
+
+@app.on_event("startup")
+async def startup_event():
+
+    logger.info(
+        "Creating database tables..."
+    )
+
+    Base.metadata.create_all(
+        bind=engine
+    )
+
+    logger.success(
+        "Database ready."
+    )
 
 # ─────────────────────────────────────────────
 # CORS
@@ -411,7 +422,7 @@ def stream_chat(
         f"Incoming query: {req.query}"
     )
 
-    # Lazy Load AI
+    # Lazy Load AI ONLY WHEN NEEDED
 
     bot = get_orchestrator()
 
@@ -458,6 +469,8 @@ def stream_chat(
 
     db.commit()
 
+    # Save Memory
+
     save_message(
 
         conversation_id=
@@ -468,7 +481,7 @@ def stream_chat(
         content=req.query,
     )
 
-    # Update Title
+    # Update Chat Title
 
     if conversation.title == "New Chat":
 
@@ -478,7 +491,7 @@ def stream_chat(
 
         db.commit()
 
-    # Run AI
+    # AI Generation
 
     try:
 
@@ -493,7 +506,9 @@ def stream_chat(
         )
 
         answer = result.get(
+
             "answer",
+
             "No answer generated."
         )
 
@@ -507,7 +522,7 @@ def stream_chat(
             f"AI Error: {str(e)}"
         )
 
-    # Stream Response
+    # Streaming Generator
 
     def generate():
 
@@ -536,6 +551,8 @@ def stream_chat(
         db.add(assistant_message)
 
         db.commit()
+
+        # Save Memory
 
         save_message(
 
