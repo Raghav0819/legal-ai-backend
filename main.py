@@ -3,6 +3,7 @@ main.py
 Production FastAPI Backend
 """
 
+import os
 import sys
 
 from pathlib import Path
@@ -36,7 +37,15 @@ from fastapi.responses import (
 
 from sqlalchemy.orm import Session
 
-from db.session import get_db
+from db.base import Base
+
+from db.session import (
+    engine,
+    get_db,
+)
+
+# IMPORTANT
+# Import models BEFORE create_all
 
 from db.models.conversation import (
     Conversation,
@@ -44,6 +53,12 @@ from db.models.conversation import (
 
 from db.models.message import (
     Message,
+)
+
+# Create tables automatically
+
+Base.metadata.create_all(
+    bind=engine
 )
 
 # ─────────────────────────────────────────────
@@ -80,16 +95,24 @@ from memory.memory_manager import (
 import config
 
 # ─────────────────────────────────────────────
-# Config
+# Allowed Origins
 # ─────────────────────────────────────────────
 
-ALLOWED_ORIGINS = getattr(
+ALLOWED_ORIGINS = [
 
-    config,
+    origin.strip()
 
-    "ALLOWED_ORIGINS",
+    for origin in os.getenv(
 
-    ["*"],
+        "ALLOWED_ORIGINS",
+
+        "*"
+
+    ).split(",")
+]
+
+logger.info(
+    f"Allowed origins: {ALLOWED_ORIGINS}"
 )
 
 # ─────────────────────────────────────────────
@@ -384,7 +407,12 @@ def stream_chat(
         Depends(get_db),
 ):
 
-    # LAZY LOAD BOT ONLY HERE
+    logger.info(
+        f"Incoming query: {req.query}"
+    )
+
+    # Lazy Load AI
+
     bot = get_orchestrator()
 
     conversation = (
@@ -414,20 +442,19 @@ def stream_chat(
                 "Conversation not found",
         )
 
-    # Save user message
+    # Save User Message
 
-    db.add(
+    user_message = Message(
 
-        Message(
+        conversation_id=
+            req.conversation_id,
 
-            conversation_id=
-                req.conversation_id,
+        role="user",
 
-            role="user",
-
-            content=req.query,
-        )
+        content=req.query,
     )
+
+    db.add(user_message)
 
     db.commit()
 
@@ -441,7 +468,7 @@ def stream_chat(
         content=req.query,
     )
 
-    # Update title
+    # Update Title
 
     if conversation.title == "New Chat":
 
@@ -453,22 +480,34 @@ def stream_chat(
 
     # Run AI
 
-    result = bot.run(
+    try:
 
-        user_query=req.query,
+        result = bot.run(
 
-        session_id=
-            str(req.conversation_id),
+            user_query=req.query,
 
-        act_hint=req.act_hint,
-    )
+            session_id=
+                str(req.conversation_id),
 
-    answer = result.get(
-        "answer",
-        ""
-    )
+            act_hint=req.act_hint,
+        )
 
-    # Stream tokens
+        answer = result.get(
+            "answer",
+            "No answer generated."
+        )
+
+    except Exception as e:
+
+        logger.exception(
+            "AI generation failed"
+        )
+
+        answer = (
+            f"AI Error: {str(e)}"
+        )
+
+    # Stream Response
 
     def generate():
 
@@ -482,20 +521,19 @@ def stream_chat(
 
             yield token
 
-        # Save AI response
+        # Save Assistant Message
 
-        db.add(
+        assistant_message = Message(
 
-            Message(
+            conversation_id=
+                req.conversation_id,
 
-                conversation_id=
-                    req.conversation_id,
+            role="assistant",
 
-                role="assistant",
-
-                content=full_response,
-            )
+            content=full_response,
         )
+
+        db.add(assistant_message)
 
         db.commit()
 
