@@ -1,14 +1,11 @@
 """
 main.py
-Production-Ready FastAPI Backend
-Indian Legal Aid Chatbot
+Production FastAPI Backend
 """
 
 import sys
 
 from pathlib import Path
-
-from contextlib import asynccontextmanager
 
 sys.path.insert(
     0,
@@ -74,15 +71,10 @@ from auth.firebase_auth import (
 
 from agents.orchestrator import (
     get_orchestrator,
-    LegalAidOrchestrator,
 )
 
 from memory.memory_manager import (
     save_message,
-)
-
-from utils.llm import (
-    stream_legal_response,
 )
 
 import config
@@ -92,41 +84,13 @@ import config
 # ─────────────────────────────────────────────
 
 ALLOWED_ORIGINS = getattr(
+
     config,
+
     "ALLOWED_ORIGINS",
+
     ["*"],
 )
-
-# ─────────────────────────────────────────────
-# Lifespan
-# ─────────────────────────────────────────────
-
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-
-    logger.info(
-        "Starting Legal AI Backend..."
-    )
-
-    try:
-
-        get_orchestrator()
-
-        logger.success(
-            "Orchestrator loaded."
-        )
-
-    except Exception as e:
-
-        logger.exception(e)
-
-        raise e
-
-    yield
-
-    logger.info(
-        "Shutting down..."
-    )
 
 # ─────────────────────────────────────────────
 # FastAPI App
@@ -137,9 +101,7 @@ app = FastAPI(
     title=
         "Indian Legal Aid Chatbot API",
 
-    version="6.0.0",
-
-    lifespan=lifespan,
+    version="7.0.0",
 )
 
 # ─────────────────────────────────────────────
@@ -208,14 +170,6 @@ class ChatResponse(BaseModel):
     session_id: str
 
 # ─────────────────────────────────────────────
-# Dependency
-# ─────────────────────────────────────────────
-
-def get_bot() -> LegalAidOrchestrator:
-
-    return get_orchestrator()
-
-# ─────────────────────────────────────────────
 # Root
 # ─────────────────────────────────────────────
 
@@ -228,7 +182,7 @@ def root():
             "Legal AI Backend Running",
 
         "version":
-            "6.0.0",
+            "7.0.0",
     }
 
 # ─────────────────────────────────────────────
@@ -240,36 +194,8 @@ def health():
 
     return {
 
-        "status": "ok"
-    }
-
-# ─────────────────────────────────────────────
-# Stats
-# ─────────────────────────────────────────────
-
-@app.get("/stats")
-def stats(
-
-    bot:
-    LegalAidOrchestrator =
-        Depends(get_bot)
-):
-
-    stats = bot._store.collection_stats()
-
-    return {
-
-        "total_chunks":
-            stats.get(
-                "total_chunks",
-                0,
-            ),
-
-        "acts":
-            stats.get(
-                "acts",
-                [],
-            ),
+        "status":
+            "ok"
     }
 
 # ─────────────────────────────────────────────
@@ -308,7 +234,7 @@ def create_conversation(
     }
 
 # ─────────────────────────────────────────────
-# Get User Conversations
+# Get Conversations
 # ─────────────────────────────────────────────
 
 @app.get("/conversations")
@@ -343,6 +269,7 @@ def get_conversations(
     return [
 
         {
+
             "id":
                 convo.id,
 
@@ -423,6 +350,7 @@ def get_messages(
     return [
 
         {
+
             "id":
                 msg.id,
 
@@ -440,171 +368,6 @@ def get_messages(
     ]
 
 # ─────────────────────────────────────────────
-# Standard Chat
-# ─────────────────────────────────────────────
-
-@app.post(
-    "/chat",
-
-    response_model=
-        ChatResponse,
-)
-def chat(
-
-    req: ChatRequest,
-
-    current_user = Depends(
-        verify_firebase_token
-    ),
-
-    db: Session =
-        Depends(get_db),
-
-    bot:
-    LegalAidOrchestrator =
-        Depends(get_bot),
-):
-
-    conversation = (
-
-        db.query(Conversation)
-
-        .filter(
-
-            Conversation.id ==
-            req.conversation_id,
-
-            Conversation.firebase_uid ==
-            current_user["uid"]
-
-        )
-
-        .first()
-    )
-
-    if not conversation:
-
-        raise HTTPException(
-
-            status_code=404,
-
-            detail=
-                "Conversation not found",
-        )
-
-    # Save user message
-
-    db.add(
-
-        Message(
-
-            conversation_id=
-                req.conversation_id,
-
-            role="user",
-
-            content=req.query,
-        )
-    )
-
-    db.commit()
-
-    save_message(
-
-        conversation_id=
-            str(req.conversation_id),
-
-        role="user",
-
-        content=req.query,
-    )
-
-    # Update title if first message
-
-    if conversation.title == "New Chat":
-
-        conversation.title = (
-            req.query[:40]
-        )
-
-        db.commit()
-
-    # Run orchestrator
-
-    result = bot.run(
-
-        user_query=req.query,
-
-        session_id=
-            str(req.conversation_id),
-
-        act_hint=req.act_hint,
-    )
-
-    answer = result.get(
-        "answer",
-        ""
-    )
-
-    # Save assistant message
-
-    db.add(
-
-        Message(
-
-            conversation_id=
-                req.conversation_id,
-
-            role="assistant",
-
-            content=answer,
-        )
-    )
-
-    db.commit()
-
-    save_message(
-
-        conversation_id=
-            str(req.conversation_id),
-
-        role="assistant",
-
-        content=answer,
-    )
-
-    return ChatResponse(
-
-        answer=answer,
-
-        language=result.get(
-            "language",
-            "English",
-        ),
-
-        intent=result.get(
-            "intent",
-            "explain",
-        ),
-
-        citations=[
-            CitationOut(**c)
-
-            for c in result.get(
-                "citations",
-                []
-            )
-        ],
-
-        draft=result.get("draft"),
-
-        error=result.get("error"),
-
-        session_id=
-            str(req.conversation_id),
-    )
-
-# ─────────────────────────────────────────────
 # Streaming Chat
 # ─────────────────────────────────────────────
 
@@ -619,11 +382,10 @@ def stream_chat(
 
     db: Session =
         Depends(get_db),
-
-    bot:
-    LegalAidOrchestrator =
-        Depends(get_bot),
 ):
+
+    # LAZY LOAD BOT ONLY HERE
+    bot = get_orchestrator()
 
     conversation = (
 
@@ -689,7 +451,7 @@ def stream_chat(
 
         db.commit()
 
-    # Run retrieval
+    # Run AI
 
     result = bot.run(
 
@@ -720,7 +482,7 @@ def stream_chat(
 
             yield token
 
-        # Save assistant response
+        # Save AI response
 
         db.add(
 
@@ -756,52 +518,6 @@ def stream_chat(
     )
 
 # ─────────────────────────────────────────────
-# Draft Endpoint
-# ─────────────────────────────────────────────
-
-@app.post("/draft")
-def draft_document(
-
-    req: ChatRequest,
-
-    current_user = Depends(
-        verify_firebase_token
-    ),
-
-    db: Session =
-        Depends(get_db),
-
-    bot:
-    LegalAidOrchestrator =
-        Depends(get_bot),
-):
-
-    forced_query = (
-        f"Draft: {req.query}"
-    )
-
-    result = bot.run(
-
-        user_query=
-            forced_query,
-
-        session_id=
-            str(req.conversation_id),
-
-        act_hint=
-            req.act_hint,
-    )
-
-    return {
-
-        "draft":
-            result.get("draft"),
-
-        "answer":
-            result.get("answer"),
-    }
-
-# ─────────────────────────────────────────────
 # Run Local
 # ─────────────────────────────────────────────
 
@@ -819,4 +535,3 @@ if __name__ == "__main__":
 
         reload=True,
     )
-
