@@ -1,0 +1,580 @@
+2026-05-26 15:29:07.547 | INFO     | __main__:run_ingestion:52 - Processing 8 act(s)...
+2026-05-26 15:29:07.550 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860)
+2026-05-26 15:29:08.264 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 112 usable pages from ipc_1860.pdf
+2026-05-26 15:29:08.265 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Code of Criminal Procedure' (prefix='crpc'). Skipping.
+2026-05-26 15:29:08.266 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: constitution_2024.pdf (Constitution of India, 1950)
+2026-05-26 15:29:09.953 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 402 usable pages from constitution_2024.pdf
+2026-05-26 15:29:09.955 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: rti_2005.pdf (Right to Information Act, 2005)
+2026-05-26 15:29:10.089 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 27 usable pages from rti_2005.pdf
+2026-05-26 15:29:10.091 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Consumer Protection Act' (prefix='consumer'). Skipping.
+2026-05-26 15:29:10.093 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'POCSO Act' (prefix='pocso'). Skipping.
+2026-05-26 15:29:10.093 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Domestic Violence Act' (prefix='domestic_violence'). Skipping.
+2026-05-26 15:29:10.095 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Insolvency and Bankruptcy Code' (prefix='ibc'). Skipping.
+2026-05-26 15:29:10.095 | INFO     | ingestion.pdf_parser:parse_all_pdfs:193 - Total pages parsed across all acts: 541
+2026-05-26 15:29:10.096 | INFO     | __main__:run_ingestion:65 - Parsed 541 pages in 2.5s
+2026-05-26 15:29:10.616 | INFO     | ingestion.chunker:__init__:56 - Chunker initialised: chunk_size=512, overlap=64
+2026-05-26 15:29:10.623 | INFO     | ingestion.chunker:chunk:71 - Created 37 act-level documents
+2026-05-26 15:29:12.953 | SUCCESS  | ingestion.chunker:chunk:74 - Generated 936 chunks total
+2026-05-26 15:29:12.954 | INFO     | __main__:run_ingestion:70 - Generated 936 chunks
+2026-05-26 15:29:12.954 | INFO     | ingestion.vector_store:__init__:48 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-26 16:05:54.964 | INFO     | __main__:run_ingestion:52 - Processing 8 act(s)...
+2026-05-26 16:05:54.966 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860)
+2026-05-26 16:05:55.603 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 112 usable pages from ipc_1860.pdf
+2026-05-26 16:05:55.605 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Code of Criminal Procedure' (prefix='crpc'). Skipping.
+2026-05-26 16:05:55.606 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: constitution_2024.pdf (Constitution of India, 1950)
+2026-05-26 16:05:57.052 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 402 usable pages from constitution_2024.pdf
+2026-05-26 16:05:57.054 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: rti_2005.pdf (Right to Information Act, 2005)
+2026-05-26 16:05:57.140 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 27 usable pages from rti_2005.pdf
+2026-05-26 16:05:57.141 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Consumer Protection Act' (prefix='consumer'). Skipping.
+2026-05-26 16:05:57.142 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'POCSO Act' (prefix='pocso'). Skipping.
+2026-05-26 16:05:57.143 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Domestic Violence Act' (prefix='domestic_violence'). Skipping.
+2026-05-26 16:05:57.145 | WARNING  | ingestion.pdf_parser:parse_all_pdfs:186 - No PDF found for 'Insolvency and Bankruptcy Code' (prefix='ibc'). Skipping.
+2026-05-26 16:05:57.146 | INFO     | ingestion.pdf_parser:parse_all_pdfs:193 - Total pages parsed across all acts: 541
+2026-05-26 16:05:57.147 | INFO     | __main__:run_ingestion:65 - Parsed 541 pages in 2.2s
+2026-05-26 16:05:57.410 | INFO     | ingestion.chunker:__init__:56 - Chunker initialised: chunk_size=512, overlap=64
+2026-05-26 16:05:57.416 | INFO     | ingestion.chunker:chunk:71 - Created 37 act-level documents
+2026-05-26 16:05:59.791 | SUCCESS  | ingestion.chunker:chunk:74 - Generated 936 chunks total
+2026-05-26 16:05:59.791 | INFO     | __main__:run_ingestion:70 - Generated 936 chunks
+2026-05-26 16:05:59.792 | INFO     | ingestion.vector_store:__init__:48 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-26 16:06:48.217 | INFO     | ingestion.vector_store:__init__:66 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 0 chunks
+2026-05-26 16:06:48.234 | INFO     | ingestion.vector_store:add_nodes:119 - Adding 936 new chunks (skipped duplicates)
+2026-05-26 16:06:55.987 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 1 (64/936 chunks)
+2026-05-26 16:07:01.812 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 2 (128/936 chunks)
+2026-05-26 16:07:07.636 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 3 (192/936 chunks)
+2026-05-26 16:07:13.749 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 4 (256/936 chunks)
+2026-05-26 16:07:19.637 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 5 (320/936 chunks)
+2026-05-26 16:07:25.433 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 6 (384/936 chunks)
+2026-05-26 16:07:31.160 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 7 (448/936 chunks)
+2026-05-26 16:07:37.189 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 8 (512/936 chunks)
+2026-05-26 16:07:42.988 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 9 (576/936 chunks)
+2026-05-26 16:07:48.985 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 10 (640/936 chunks)
+2026-05-26 16:07:55.244 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 11 (704/936 chunks)
+2026-05-26 16:08:01.058 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 12 (768/936 chunks)
+2026-05-26 16:08:06.705 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 13 (832/936 chunks)
+2026-05-26 16:08:12.505 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 14 (896/936 chunks)
+2026-05-26 16:08:16.335 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 15 (936/936 chunks)
+2026-05-26 16:08:16.336 | SUCCESS  | ingestion.vector_store:add_nodes:143 - Ingestion complete. Total chunks in DB: 936
+2026-05-26 16:08:16.430 | SUCCESS  | __main__:run_ingestion:76 - ChromaDB: 936 total chunks | 3 acts: Constitution of India, Indian Penal Code, Right to Information Act
+2026-05-26 16:08:16.514 | INFO     | ingestion.hybrid_retriever:build_bm25_index:63 - Building BM25 index over 936 chunks...
+2026-05-26 16:08:16.791 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:73 - BM25 index built.
+2026-05-26 16:08:16.796 | INFO     | __main__:run_ingestion:93 - Running smoke test queries...
+2026-05-26 16:08:16.866 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:08:16.872 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 16:08:16.948 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:08:16.952 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 16:08:17.020 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:08:17.024 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 16:08:17.102 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:08:17.106 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 0 results
+2026-05-26 16:08:17.109 | SUCCESS  | __main__:run_ingestion:116 - Full ingestion pipeline complete in 142.1s
+2026-05-26 16:44:07.249 | INFO     | __main__:run_ingestion:52 - Processing 8 act(s)...
+2026-05-26 16:44:07.251 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860)
+2026-05-26 16:44:07.548 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 112 usable pages from ipc_1860.pdf
+2026-05-26 16:44:07.549 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973)
+2026-05-26 16:44:08.126 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 263 usable pages from crpc.pdf
+2026-05-26 16:44:08.126 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: constitution_2024.pdf (Constitution of India, 1950)
+2026-05-26 16:44:08.778 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 402 usable pages from constitution_2024.pdf
+2026-05-26 16:44:08.779 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: rti_2005.pdf (Right to Information Act, 2005)
+2026-05-26 16:44:08.821 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 27 usable pages from rti_2005.pdf
+2026-05-26 16:44:08.822 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: consumer.pdf (Consumer Protection Act, 2019)
+2026-05-26 16:44:08.908 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 40 usable pages from consumer.pdf
+2026-05-26 16:44:08.908 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: pocso.pdf (POCSO Act, 2012)
+2026-05-26 16:44:08.963 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 17 usable pages from pocso.pdf
+2026-05-26 16:44:08.964 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005)
+2026-05-26 16:44:09.004 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 12 usable pages from domestic_violence.pdf
+2026-05-26 16:44:09.005 | INFO     | ingestion.pdf_parser:parse:96 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016)
+2026-05-26 16:44:09.243 | SUCCESS  | ingestion.pdf_parser:parse:144 - Parsed 142 usable pages from ibc.pdf
+2026-05-26 16:44:09.243 | INFO     | ingestion.pdf_parser:parse_all_pdfs:193 - Total pages parsed across all acts: 1015
+2026-05-26 16:44:09.243 | INFO     | __main__:run_ingestion:65 - Parsed 1015 pages in 2.0s
+2026-05-26 16:44:09.391 | INFO     | ingestion.chunker:__init__:56 - Chunker initialised: chunk_size=512, overlap=64
+2026-05-26 16:44:09.401 | INFO     | ingestion.chunker:chunk:71 - Created 119 act-level documents
+2026-05-26 16:44:11.332 | SUCCESS  | ingestion.chunker:chunk:74 - Generated 1893 chunks total
+2026-05-26 16:44:11.332 | INFO     | __main__:run_ingestion:70 - Generated 1893 chunks
+2026-05-26 16:44:11.333 | INFO     | ingestion.vector_store:__init__:48 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-26 16:44:16.327 | INFO     | ingestion.vector_store:__init__:66 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 936 chunks
+2026-05-26 16:44:16.380 | INFO     | ingestion.vector_store:add_nodes:119 - Adding 957 new chunks (skipped duplicates)
+2026-05-26 16:44:20.474 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 1 (64/957 chunks)
+2026-05-26 16:44:23.923 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 2 (128/957 chunks)
+2026-05-26 16:44:27.411 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 3 (192/957 chunks)
+2026-05-26 16:44:30.868 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 4 (256/957 chunks)
+2026-05-26 16:44:34.347 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 5 (320/957 chunks)
+2026-05-26 16:44:37.840 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 6 (384/957 chunks)
+2026-05-26 16:44:41.243 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 7 (448/957 chunks)
+2026-05-26 16:44:44.688 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 8 (512/957 chunks)
+2026-05-26 16:44:48.132 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 9 (576/957 chunks)
+2026-05-26 16:44:51.562 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 10 (640/957 chunks)
+2026-05-26 16:44:55.028 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 11 (704/957 chunks)
+2026-05-26 16:44:58.565 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 12 (768/957 chunks)
+2026-05-26 16:45:02.425 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 13 (832/957 chunks)
+2026-05-26 16:45:06.305 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 14 (896/957 chunks)
+2026-05-26 16:45:09.746 | INFO     | ingestion.vector_store:add_nodes:141 -   Stored batch 15 (957/957 chunks)
+2026-05-26 16:45:09.748 | SUCCESS  | ingestion.vector_store:add_nodes:143 - Ingestion complete. Total chunks in DB: 1893
+2026-05-26 16:45:09.835 | SUCCESS  | __main__:run_ingestion:76 - ChromaDB: 1893 total chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-26 16:45:09.939 | INFO     | ingestion.hybrid_retriever:build_bm25_index:63 - Building BM25 index over 1893 chunks...
+2026-05-26 16:45:10.270 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:73 - BM25 index built.
+2026-05-26 16:45:10.277 | INFO     | __main__:run_ingestion:93 - Running smoke test queries...
+2026-05-26 16:45:10.328 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:45:10.335 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 16:45:10.375 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:45:10.380 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 16:45:10.419 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:45:10.426 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 16:45:10.463 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 16:45:10.468 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 0 results
+2026-05-26 16:45:10.469 | SUCCESS  | __main__:run_ingestion:116 - Full ingestion pipeline complete in 63.2s
+2026-05-26 22:51:40.894 | INFO     | __main__:run_ingestion:52 - Processing 8 act(s)...
+2026-05-26 22:51:40.897 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860), skipping before page 14
+2026-05-26 22:51:41.727 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 591 sections from ipc_1860.pdf
+2026-05-26 22:51:41.729 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973), skipping before page 21
+2026-05-26 22:51:43.418 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 539 sections from crpc.pdf
+2026-05-26 22:51:43.419 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: constitution_2024.pdf (Constitution of India, 1950), skipping before page 33
+2026-05-26 22:51:45.371 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 1116 sections from constitution_2024.pdf
+2026-05-26 22:51:45.372 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: rti_2005.pdf (Right to Information Act, 2005), skipping before page 6
+2026-05-26 22:51:45.503 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 44 sections from rti_2005.pdf
+2026-05-26 22:51:45.505 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: consumer.pdf (Consumer Protection Act, 2019), skipping before page 1
+2026-05-26 22:51:45.750 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 107 sections from consumer.pdf
+2026-05-26 22:51:45.751 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: pocso.pdf (POCSO Act, 2012), skipping before page 3
+2026-05-26 22:51:45.885 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 46 sections from pocso.pdf
+2026-05-26 22:51:45.905 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005), skipping before page 3
+2026-05-26 22:51:45.998 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 37 sections from domestic_violence.pdf
+2026-05-26 22:51:46.000 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016), skipping before page 12
+2026-05-26 22:51:46.742 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 293 sections from ibc.pdf
+2026-05-26 22:51:46.742 | INFO     | ingestion.pdf_parser:parse_all_pdfs:225 - Total sections parsed across all acts: 2773
+2026-05-26 22:51:46.743 | INFO     | __main__:run_ingestion:65 - Parsed 2773 pages in 5.8s
+2026-05-26 22:51:47.290 | INFO     | ingestion.chunker:__init__:45 - Chunker initialised: chunk_size=512, overlap=64
+2026-05-26 22:51:47.501 | INFO     | ingestion.chunker:chunk:54 - Created 2773 section-level documents
+2026-05-26 22:51:51.693 | SUCCESS  | ingestion.chunker:chunk:57 - Generated 3329 chunks total
+2026-05-26 22:51:51.695 | INFO     | __main__:run_ingestion:70 - Generated 3329 chunks
+2026-05-26 22:51:51.696 | INFO     | ingestion.vector_store:__init__:48 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-26 22:52:00.766 | INFO     | ingestion.vector_store:__init__:66 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 0 chunks
+2026-05-26 22:52:49.217 | INFO     | __main__:run_ingestion:52 - Processing 8 act(s)...
+2026-05-26 22:52:49.219 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860), skipping before page 14
+2026-05-26 22:52:50.068 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 591 sections from ipc_1860.pdf
+2026-05-26 22:52:50.070 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973), skipping before page 21
+2026-05-26 22:52:51.738 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 539 sections from crpc.pdf
+2026-05-26 22:52:51.740 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: constitution_2024.pdf (Constitution of India, 1950), skipping before page 33
+2026-05-26 22:52:53.669 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 1116 sections from constitution_2024.pdf
+2026-05-26 22:52:53.671 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: rti_2005.pdf (Right to Information Act, 2005), skipping before page 6
+2026-05-26 22:52:53.790 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 44 sections from rti_2005.pdf
+2026-05-26 22:52:53.792 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: consumer.pdf (Consumer Protection Act, 2019), skipping before page 1
+2026-05-26 22:52:53.995 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 107 sections from consumer.pdf
+2026-05-26 22:52:53.997 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: pocso.pdf (POCSO Act, 2012), skipping before page 3
+2026-05-26 22:52:54.126 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 46 sections from pocso.pdf
+2026-05-26 22:52:54.127 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005), skipping before page 3
+2026-05-26 22:52:54.217 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 37 sections from domestic_violence.pdf
+2026-05-26 22:52:54.219 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016), skipping before page 12
+2026-05-26 22:52:54.965 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 293 sections from ibc.pdf
+2026-05-26 22:52:54.965 | INFO     | ingestion.pdf_parser:parse_all_pdfs:225 - Total sections parsed across all acts: 2773
+2026-05-26 22:52:54.966 | INFO     | __main__:run_ingestion:65 - Parsed 2773 pages in 5.7s
+2026-05-26 22:52:55.280 | INFO     | ingestion.chunker:__init__:45 - Chunker initialised: chunk_size=512, overlap=64
+2026-05-26 22:52:55.499 | INFO     | ingestion.chunker:chunk:54 - Created 2773 section-level documents
+2026-05-26 22:52:59.667 | SUCCESS  | ingestion.chunker:chunk:57 - Generated 3329 chunks total
+2026-05-26 22:52:59.670 | INFO     | __main__:run_ingestion:70 - Generated 3329 chunks
+2026-05-26 22:52:59.670 | INFO     | ingestion.vector_store:__init__:48 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-26 22:53:06.879 | INFO     | ingestion.vector_store:__init__:66 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 0 chunks
+2026-05-26 22:53:06.939 | INFO     | ingestion.vector_store:add_nodes:134 - Adding 3328 new chunks (skipped duplicates)
+2026-05-26 22:53:17.426 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 1 (64/3328 chunks)
+2026-05-26 22:53:25.117 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 2 (128/3328 chunks)
+2026-05-26 22:53:32.924 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 3 (192/3328 chunks)
+2026-05-26 22:53:42.730 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 4 (256/3328 chunks)
+2026-05-26 22:53:50.294 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 5 (320/3328 chunks)
+2026-05-26 22:54:05.718 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 6 (384/3328 chunks)
+2026-05-26 22:54:14.779 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 7 (448/3328 chunks)
+2026-05-26 22:54:25.184 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 8 (512/3328 chunks)
+2026-05-26 22:54:33.777 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 9 (576/3328 chunks)
+2026-05-26 22:54:48.995 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 10 (640/3328 chunks)
+2026-05-26 22:54:59.910 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 11 (704/3328 chunks)
+2026-05-26 22:55:08.207 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 12 (768/3328 chunks)
+2026-05-26 22:55:16.499 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 13 (832/3328 chunks)
+2026-05-26 22:55:24.050 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 14 (896/3328 chunks)
+2026-05-26 22:55:31.710 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 15 (960/3328 chunks)
+2026-05-26 22:55:39.633 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 16 (1024/3328 chunks)
+2026-05-26 22:55:47.130 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 17 (1088/3328 chunks)
+2026-05-26 22:55:54.623 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 18 (1152/3328 chunks)
+2026-05-26 22:56:02.230 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 19 (1216/3328 chunks)
+2026-05-26 22:56:09.605 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 20 (1280/3328 chunks)
+2026-05-26 22:56:17.349 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 21 (1344/3328 chunks)
+2026-05-26 22:56:25.052 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 22 (1408/3328 chunks)
+2026-05-26 22:56:32.784 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 23 (1472/3328 chunks)
+2026-05-26 22:56:40.924 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 24 (1536/3328 chunks)
+2026-05-26 22:56:48.503 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 25 (1600/3328 chunks)
+2026-05-26 22:56:56.176 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 26 (1664/3328 chunks)
+2026-05-26 22:57:04.026 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 27 (1728/3328 chunks)
+2026-05-26 22:57:11.538 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 28 (1792/3328 chunks)
+2026-05-26 22:57:19.054 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 29 (1856/3328 chunks)
+2026-05-26 22:57:26.671 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 30 (1920/3328 chunks)
+2026-05-26 22:57:35.394 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 31 (1984/3328 chunks)
+2026-05-26 22:57:49.688 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 32 (2048/3328 chunks)
+2026-05-26 22:58:02.100 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 33 (2112/3328 chunks)
+2026-05-26 22:58:07.113 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 34 (2176/3328 chunks)
+2026-05-26 22:58:13.266 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 35 (2240/3328 chunks)
+2026-05-26 22:58:18.300 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 36 (2304/3328 chunks)
+2026-05-26 22:58:23.430 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 37 (2368/3328 chunks)
+2026-05-26 22:58:28.324 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 38 (2432/3328 chunks)
+2026-05-26 22:58:32.698 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 39 (2496/3328 chunks)
+2026-05-26 22:58:37.566 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 40 (2560/3328 chunks)
+2026-05-26 22:58:42.305 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 41 (2624/3328 chunks)
+2026-05-26 22:58:50.636 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 42 (2688/3328 chunks)
+2026-05-26 22:58:58.151 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 43 (2752/3328 chunks)
+2026-05-26 22:59:05.852 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 44 (2816/3328 chunks)
+2026-05-26 22:59:13.356 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 45 (2880/3328 chunks)
+2026-05-26 22:59:21.030 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 46 (2944/3328 chunks)
+2026-05-26 22:59:28.664 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 47 (3008/3328 chunks)
+2026-05-26 22:59:36.572 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 48 (3072/3328 chunks)
+2026-05-26 22:59:45.634 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 49 (3136/3328 chunks)
+2026-05-26 22:59:53.179 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 50 (3200/3328 chunks)
+2026-05-26 23:00:00.653 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 51 (3264/3328 chunks)
+2026-05-26 23:00:08.139 | INFO     | ingestion.vector_store:add_nodes:156 -   Stored batch 52 (3328/3328 chunks)
+2026-05-26 23:00:08.142 | SUCCESS  | ingestion.vector_store:add_nodes:158 - Ingestion complete. Total chunks in DB: 3328
+2026-05-26 23:00:08.255 | SUCCESS  | __main__:run_ingestion:76 - ChromaDB: 3328 total chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-26 23:00:08.568 | INFO     | ingestion.hybrid_retriever:build_bm25_index:63 - Building BM25 index over 3328 chunks...
+2026-05-26 23:00:09.079 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:73 - BM25 index built.
+2026-05-26 23:00:09.087 | INFO     | __main__:run_ingestion:93 - Running smoke test queries...
+2026-05-26 23:00:09.248 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 23:00:09.267 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 23:00:12.236 | DEBUG    | ingestion.hybrid_retriever:_cohere_rerank:223 - Cohere reranked to top 2
+2026-05-26 23:00:12.547 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 23:00:12.559 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 23:00:13.866 | DEBUG    | ingestion.hybrid_retriever:_cohere_rerank:223 - Cohere reranked to top 2
+2026-05-26 23:00:14.008 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 23:00:14.028 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 8 results
+2026-05-26 23:00:15.198 | DEBUG    | ingestion.hybrid_retriever:_cohere_rerank:223 - Cohere reranked to top 2
+2026-05-26 23:00:15.354 | DEBUG    | ingestion.hybrid_retriever:retrieve:100 - Dense retrieval: 8 results
+2026-05-26 23:00:15.372 | DEBUG    | ingestion.hybrid_retriever:retrieve:104 - BM25 retrieval: 0 results
+2026-05-26 23:00:16.575 | DEBUG    | ingestion.hybrid_retriever:_cohere_rerank:223 - Cohere reranked to top 2
+2026-05-27 14:54:27.700 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860), skipping before page 14
+2026-05-27 14:54:28.248 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 591 sections from ipc_1860.pdf
+2026-05-27 14:54:28.250 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973), skipping before page 21
+2026-05-27 14:54:29.163 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 539 sections from crpc.pdf
+2026-05-27 14:54:29.166 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: constitution_2024.pdf (Constitution of India, 1950), skipping before page 33
+2026-05-27 14:54:30.099 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 1116 sections from constitution_2024.pdf
+2026-05-27 14:54:30.100 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: rti_2005.pdf (Right to Information Act, 2005), skipping before page 6
+2026-05-27 14:54:30.167 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 44 sections from rti_2005.pdf
+2026-05-27 14:54:30.168 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: consumer.pdf (Consumer Protection Act, 2019), skipping before page 1
+2026-05-27 14:54:30.289 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 107 sections from consumer.pdf
+2026-05-27 14:54:30.289 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: pocso.pdf (POCSO Act, 2012), skipping before page 3
+2026-05-27 14:54:30.366 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 46 sections from pocso.pdf
+2026-05-27 14:54:30.367 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005), skipping before page 3
+2026-05-27 14:54:30.431 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 37 sections from domestic_violence.pdf
+2026-05-27 14:54:30.432 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016), skipping before page 12
+2026-05-27 14:54:30.804 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 293 sections from ibc.pdf
+2026-05-27 14:54:30.804 | INFO     | ingestion.pdf_parser:parse_all_pdfs:225 - Total sections parsed across all acts: 2773
+2026-05-27 14:59:04.462 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860), skipping before page 14
+2026-05-27 14:59:04.780 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 591 sections from ipc_1860.pdf
+2026-05-27 14:59:04.781 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973), skipping before page 21
+2026-05-27 14:59:05.419 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 539 sections from crpc.pdf
+2026-05-27 14:59:05.420 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: constitution_2024.pdf (Constitution of India, 1950), skipping before page 33
+2026-05-27 14:59:06.155 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 1116 sections from constitution_2024.pdf
+2026-05-27 14:59:06.156 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: rti_2005.pdf (Right to Information Act, 2005), skipping before page 6
+2026-05-27 14:59:06.202 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 44 sections from rti_2005.pdf
+2026-05-27 14:59:06.203 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: consumer.pdf (Consumer Protection Act, 2019), skipping before page 1
+2026-05-27 14:59:06.287 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 107 sections from consumer.pdf
+2026-05-27 14:59:06.288 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: pocso.pdf (POCSO Act, 2012), skipping before page 3
+2026-05-27 14:59:06.336 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 46 sections from pocso.pdf
+2026-05-27 14:59:06.337 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005), skipping before page 3
+2026-05-27 14:59:06.372 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 37 sections from domestic_violence.pdf
+2026-05-27 14:59:06.374 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016), skipping before page 12
+2026-05-27 14:59:06.662 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 293 sections from ibc.pdf
+2026-05-27 14:59:06.663 | INFO     | ingestion.pdf_parser:parse_all_pdfs:225 - Total sections parsed across all acts: 2773
+2026-05-27 14:59:42.870 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860), skipping before page 14
+2026-05-27 14:59:43.193 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 591 sections from ipc_1860.pdf
+2026-05-27 14:59:43.194 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973), skipping before page 21
+2026-05-27 14:59:43.843 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 539 sections from crpc.pdf
+2026-05-27 14:59:43.844 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: constitution_2024.pdf (Constitution of India, 1950), skipping before page 33
+2026-05-27 14:59:44.584 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 1116 sections from constitution_2024.pdf
+2026-05-27 14:59:44.585 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: rti_2005.pdf (Right to Information Act, 2005), skipping before page 6
+2026-05-27 14:59:44.631 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 44 sections from rti_2005.pdf
+2026-05-27 14:59:44.632 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: consumer.pdf (Consumer Protection Act, 2019), skipping before page 1
+2026-05-27 14:59:44.717 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 107 sections from consumer.pdf
+2026-05-27 14:59:44.717 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: pocso.pdf (POCSO Act, 2012), skipping before page 3
+2026-05-27 14:59:44.766 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 46 sections from pocso.pdf
+2026-05-27 14:59:44.767 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005), skipping before page 3
+2026-05-27 14:59:44.804 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 37 sections from domestic_violence.pdf
+2026-05-27 14:59:44.805 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016), skipping before page 12
+2026-05-27 14:59:45.090 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 293 sections from ibc.pdf
+2026-05-27 14:59:45.090 | INFO     | ingestion.pdf_parser:parse_all_pdfs:225 - Total sections parsed across all acts: 2773
+2026-05-27 15:01:01.049 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ipc_1860.pdf (Indian Penal Code, 1860), skipping before page 14
+2026-05-27 15:01:01.412 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 591 sections from ipc_1860.pdf
+2026-05-27 15:01:01.414 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: crpc.pdf (Code of Criminal Procedure, 1973), skipping before page 21
+2026-05-27 15:01:02.185 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 539 sections from crpc.pdf
+2026-05-27 15:01:02.186 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: constitution_2024.pdf (Constitution of India, 1950), skipping before page 33
+2026-05-27 15:01:02.939 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 1116 sections from constitution_2024.pdf
+2026-05-27 15:01:02.940 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: rti_2005.pdf (Right to Information Act, 2005), skipping before page 6
+2026-05-27 15:01:02.998 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 44 sections from rti_2005.pdf
+2026-05-27 15:01:02.999 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: consumer.pdf (Consumer Protection Act, 2019), skipping before page 1
+2026-05-27 15:01:03.103 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 107 sections from consumer.pdf
+2026-05-27 15:01:03.104 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: pocso.pdf (POCSO Act, 2012), skipping before page 3
+2026-05-27 15:01:03.164 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 46 sections from pocso.pdf
+2026-05-27 15:01:03.165 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: domestic_violence.pdf (Domestic Violence Act, 2005), skipping before page 3
+2026-05-27 15:01:03.213 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 37 sections from domestic_violence.pdf
+2026-05-27 15:01:03.214 | INFO     | ingestion.pdf_parser:parse:94 - Parsing: ibc.pdf (Insolvency and Bankruptcy Code, 2016), skipping before page 12
+2026-05-27 15:01:03.517 | SUCCESS  | ingestion.pdf_parser:parse:201 - Parsed 293 sections from ibc.pdf
+2026-05-27 15:01:03.517 | INFO     | ingestion.pdf_parser:parse_all_pdfs:225 - Total sections parsed across all acts: 2773
+2026-05-27 15:01:03.540 | INFO     | ingestion.chunker:chunk:98 -   Indian Penal Code: 211 section chunks
+2026-05-27 15:01:03.565 | INFO     | ingestion.chunker:chunk:98 -   Code of Criminal Procedure: 25 section chunks
+2026-05-27 15:01:03.591 | INFO     | ingestion.chunker:chunk:98 -   Constitution of India: 161 section chunks
+2026-05-27 15:01:03.594 | WARNING  | ingestion.chunker:_chunk_act:119 - Right to Information Act: no sections found, using token fallback
+2026-05-27 15:01:03.826 | INFO     | ingestion.chunker:chunk:98 -   Right to Information Act: 34 section chunks
+2026-05-27 15:01:03.831 | WARNING  | ingestion.chunker:_chunk_act:119 - Consumer Protection Act: no sections found, using token fallback
+2026-05-27 15:01:03.880 | INFO     | ingestion.chunker:chunk:98 -   Consumer Protection Act: 71 section chunks
+2026-05-27 15:01:03.882 | WARNING  | ingestion.chunker:_chunk_act:119 - POCSO Act: no sections found, using token fallback
+2026-05-27 15:01:03.902 | INFO     | ingestion.chunker:chunk:98 -   POCSO Act: 27 section chunks
+2026-05-27 15:01:03.903 | WARNING  | ingestion.chunker:_chunk_act:119 - Domestic Violence Act: no sections found, using token fallback
+2026-05-27 15:01:03.916 | INFO     | ingestion.chunker:chunk:98 -   Domestic Violence Act: 19 section chunks
+2026-05-27 15:01:03.925 | WARNING  | ingestion.chunker:_chunk_act:119 - Insolvency and Bankruptcy Code: no sections found, using token fallback
+2026-05-27 15:01:04.067 | INFO     | ingestion.chunker:chunk:98 -   Insolvency and Bankruptcy Code: 196 section chunks
+2026-05-27 15:01:04.067 | SUCCESS  | ingestion.chunker:chunk:100 - Generated 744 section-based chunks total
+2026-05-27 15:01:04.068 | INFO     | __main__:run_ingestion:46 - Generated 744 section-based chunks
+2026-05-27 15:01:04.068 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:01:10.645 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 3328 chunks
+2026-05-27 15:01:10.650 | INFO     | ingestion.vector_store:add_nodes:90 - Adding 744 new chunks
+2026-05-27 15:01:15.125 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 1 (64/744 chunks)
+2026-05-27 15:01:18.685 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 2 (128/744 chunks)
+2026-05-27 15:01:22.248 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 3 (192/744 chunks)
+2026-05-27 15:01:25.888 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 4 (256/744 chunks)
+2026-05-27 15:01:29.407 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 5 (320/744 chunks)
+2026-05-27 15:01:32.931 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 6 (384/744 chunks)
+2026-05-27 15:01:36.422 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 7 (448/744 chunks)
+2026-05-27 15:01:40.031 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 8 (512/744 chunks)
+2026-05-27 15:01:43.860 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 9 (576/744 chunks)
+2026-05-27 15:01:47.541 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 10 (640/744 chunks)
+2026-05-27 15:01:51.152 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 11 (704/744 chunks)
+2026-05-27 15:01:53.477 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 12 (744/744 chunks)
+2026-05-27 15:01:53.479 | SUCCESS  | ingestion.vector_store:add_nodes:111 - Ingestion complete. Total chunks in DB: 4072
+2026-05-27 15:01:53.721 | SUCCESS  | __main__:run_ingestion:57 - ChromaDB: 4072 chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-27 15:02:28.800 | SUCCESS  | ingestion.hybrid_retriever:_load_reranker:49 - Cross-encoder reranker loaded.
+2026-05-27 15:02:28.801 | INFO     | ingestion.hybrid_retriever:build_bm25_index:55 - Building BM25 index over 4072 chunks...
+2026-05-27 15:02:29.103 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:60 - BM25 index built.
+2026-05-27 15:02:29.110 | INFO     | __main__:run_ingestion:71 - Running smoke test queries...
+2026-05-27 15:02:29.485 | DEBUG    | ingestion.hybrid_retriever:_cross_encoder_rerank:151 - Cross-encoder reranked 12 → top 2
+2026-05-27 15:02:29.989 | DEBUG    | ingestion.hybrid_retriever:_cross_encoder_rerank:151 - Cross-encoder reranked 16 → top 2
+2026-05-27 15:02:30.315 | DEBUG    | ingestion.hybrid_retriever:_cross_encoder_rerank:151 - Cross-encoder reranked 13 → top 2
+2026-05-27 15:02:30.601 | DEBUG    | ingestion.hybrid_retriever:_cross_encoder_rerank:151 - Cross-encoder reranked 14 → top 2
+2026-05-27 15:02:30.830 | DEBUG    | ingestion.hybrid_retriever:_cross_encoder_rerank:151 - Cross-encoder reranked 8 → top 2
+2026-05-27 15:02:30.831 | SUCCESS  | __main__:run_ingestion:98 - Done in 89.8s
+2026-05-27 15:12:00.097 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 659 sections from ipc_1860.pdf
+2026-05-27 15:12:00.705 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 672 sections from crpc.pdf
+2026-05-27 15:12:01.445 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 838 sections from constitution_2024.pdf
+2026-05-27 15:12:01.489 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 32 sections from rti_2005.pdf
+2026-05-27 15:12:01.556 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 47 sections from consumer.pdf
+2026-05-27 15:12:01.593 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 39 sections from pocso.pdf
+2026-05-27 15:12:01.622 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 35 sections from domestic_violence.pdf
+2026-05-27 15:12:01.861 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 283 sections from ibc.pdf
+2026-05-27 15:12:01.861 | INFO     | ingestion.pdf_parser:parse_all_pdfs:252 - Total sections parsed across all acts: 2605
+2026-05-27 15:12:01.890 | INFO     | ingestion.chunker:chunk:49 -   Indian Penal Code: 795 section chunks
+2026-05-27 15:12:01.930 | INFO     | ingestion.chunker:chunk:49 -   Code of Criminal Procedure: 976 section chunks
+2026-05-27 15:12:01.984 | INFO     | ingestion.chunker:chunk:49 -   Constitution of India: 1311 section chunks
+2026-05-27 15:12:01.989 | INFO     | ingestion.chunker:chunk:49 -   Right to Information Act: 106 section chunks
+2026-05-27 15:12:01.997 | INFO     | ingestion.chunker:chunk:49 -   Consumer Protection Act: 208 section chunks
+2026-05-27 15:12:02.001 | INFO     | ingestion.chunker:chunk:49 -   POCSO Act: 98 section chunks
+2026-05-27 15:12:02.002 | INFO     | ingestion.chunker:chunk:49 -   Domestic Violence Act: 46 section chunks
+2026-05-27 15:12:02.027 | INFO     | ingestion.chunker:chunk:49 -   Insolvency and Bankruptcy Code: 736 section chunks
+2026-05-27 15:12:02.028 | SUCCESS  | ingestion.chunker:chunk:58 - Generated 4276 section-based chunks total
+2026-05-27 15:12:02.028 | INFO     | __main__:run_ingestion:46 - Generated 4276 section-based chunks
+2026-05-27 15:12:02.028 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:12:06.833 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 4072 chunks
+2026-05-27 15:12:07.816 | WARNING  | ingestion.vector_store:reset_collection:63 - Collection reset. All existing chunks deleted.
+2026-05-27 15:12:07.817 | WARNING  | __main__:run_ingestion:53 - ChromaDB wiped. Re-ingesting all chunks...
+2026-05-27 15:16:44.492 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 659 sections from ipc_1860.pdf
+2026-05-27 15:16:45.066 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 672 sections from crpc.pdf
+2026-05-27 15:16:45.757 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 838 sections from constitution_2024.pdf
+2026-05-27 15:16:45.792 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 32 sections from rti_2005.pdf
+2026-05-27 15:16:45.849 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 47 sections from consumer.pdf
+2026-05-27 15:16:45.890 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 39 sections from pocso.pdf
+2026-05-27 15:16:45.919 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 35 sections from domestic_violence.pdf
+2026-05-27 15:16:46.143 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 283 sections from ibc.pdf
+2026-05-27 15:16:46.144 | INFO     | ingestion.pdf_parser:parse_all_pdfs:252 - Total sections parsed across all acts: 2605
+2026-05-27 15:16:46.170 | INFO     | ingestion.chunker:chunk:49 -   Indian Penal Code: 795 section chunks
+2026-05-27 15:16:46.208 | INFO     | ingestion.chunker:chunk:49 -   Code of Criminal Procedure: 976 section chunks
+2026-05-27 15:16:46.255 | INFO     | ingestion.chunker:chunk:49 -   Constitution of India: 1311 section chunks
+2026-05-27 15:16:46.259 | INFO     | ingestion.chunker:chunk:49 -   Right to Information Act: 106 section chunks
+2026-05-27 15:16:46.267 | INFO     | ingestion.chunker:chunk:49 -   Consumer Protection Act: 208 section chunks
+2026-05-27 15:16:46.271 | INFO     | ingestion.chunker:chunk:49 -   POCSO Act: 98 section chunks
+2026-05-27 15:16:46.273 | INFO     | ingestion.chunker:chunk:49 -   Domestic Violence Act: 46 section chunks
+2026-05-27 15:16:46.298 | INFO     | ingestion.chunker:chunk:49 -   Insolvency and Bankruptcy Code: 736 section chunks
+2026-05-27 15:16:46.298 | SUCCESS  | ingestion.chunker:chunk:58 - Generated 4276 section-based chunks total
+2026-05-27 15:16:46.298 | INFO     | __main__:run_ingestion:46 - Generated 4276 section-based chunks
+2026-05-27 15:16:46.299 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:16:50.981 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 0 chunks
+2026-05-27 15:16:51.005 | WARNING  | ingestion.vector_store:reset_collection:63 - Collection reset. All existing chunks deleted.
+2026-05-27 15:16:51.005 | WARNING  | __main__:run_ingestion:53 - ChromaDB wiped. Re-ingesting all chunks...
+2026-05-27 15:16:51.034 | INFO     | ingestion.vector_store:add_nodes:90 - Adding 4276 new chunks
+2026-05-27 15:16:54.990 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 1 (64/4276 chunks)
+2026-05-27 15:16:57.682 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 2 (128/4276 chunks)
+2026-05-27 15:17:00.499 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 3 (192/4276 chunks)
+2026-05-27 15:17:03.872 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 4 (256/4276 chunks)
+2026-05-27 15:17:07.244 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 5 (320/4276 chunks)
+2026-05-27 15:17:10.645 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 6 (384/4276 chunks)
+2026-05-27 15:17:14.117 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 7 (448/4276 chunks)
+2026-05-27 15:17:17.590 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 8 (512/4276 chunks)
+2026-05-27 15:17:21.022 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 9 (576/4276 chunks)
+2026-05-27 15:17:24.650 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 10 (640/4276 chunks)
+2026-05-27 15:17:28.101 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 11 (704/4276 chunks)
+2026-05-27 15:17:31.500 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 12 (768/4276 chunks)
+2026-05-27 15:17:34.563 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 13 (832/4276 chunks)
+2026-05-27 15:17:37.077 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 14 (896/4276 chunks)
+2026-05-27 15:17:39.637 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 15 (960/4276 chunks)
+2026-05-27 15:17:42.971 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 16 (1024/4276 chunks)
+2026-05-27 15:17:46.318 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 17 (1088/4276 chunks)
+2026-05-27 15:17:49.699 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 18 (1152/4276 chunks)
+2026-05-27 15:17:53.114 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 19 (1216/4276 chunks)
+2026-05-27 15:17:56.589 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 20 (1280/4276 chunks)
+2026-05-27 15:18:00.104 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 21 (1344/4276 chunks)
+2026-05-27 15:18:03.697 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 22 (1408/4276 chunks)
+2026-05-27 15:18:07.496 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 23 (1472/4276 chunks)
+2026-05-27 15:18:11.112 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 24 (1536/4276 chunks)
+2026-05-27 15:18:14.607 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 25 (1600/4276 chunks)
+2026-05-27 15:18:17.958 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 26 (1664/4276 chunks)
+2026-05-27 15:18:21.348 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 27 (1728/4276 chunks)
+2026-05-27 15:18:24.621 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 28 (1792/4276 chunks)
+2026-05-27 15:18:26.928 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 29 (1856/4276 chunks)
+2026-05-27 15:18:29.395 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 30 (1920/4276 chunks)
+2026-05-27 15:18:32.305 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 31 (1984/4276 chunks)
+2026-05-27 15:18:35.316 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 32 (2048/4276 chunks)
+2026-05-27 15:18:38.751 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 33 (2112/4276 chunks)
+2026-05-27 15:18:42.165 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 34 (2176/4276 chunks)
+2026-05-27 15:18:45.634 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 35 (2240/4276 chunks)
+2026-05-27 15:18:49.036 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 36 (2304/4276 chunks)
+2026-05-27 15:18:52.429 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 37 (2368/4276 chunks)
+2026-05-27 15:18:55.809 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 38 (2432/4276 chunks)
+2026-05-27 15:18:59.198 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 39 (2496/4276 chunks)
+2026-05-27 15:19:02.588 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 40 (2560/4276 chunks)
+2026-05-27 15:19:06.153 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 41 (2624/4276 chunks)
+2026-05-27 15:19:09.573 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 42 (2688/4276 chunks)
+2026-05-27 15:19:13.021 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 43 (2752/4276 chunks)
+2026-05-27 15:19:16.523 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 44 (2816/4276 chunks)
+2026-05-27 15:19:19.963 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 45 (2880/4276 chunks)
+2026-05-27 15:19:23.373 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 46 (2944/4276 chunks)
+2026-05-27 15:19:26.872 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 47 (3008/4276 chunks)
+2026-05-27 15:19:30.305 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 48 (3072/4276 chunks)
+2026-05-27 15:19:33.589 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 49 (3136/4276 chunks)
+2026-05-27 15:19:36.973 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 50 (3200/4276 chunks)
+2026-05-27 15:19:40.163 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 51 (3264/4276 chunks)
+2026-05-27 15:19:43.567 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 52 (3328/4276 chunks)
+2026-05-27 15:19:46.568 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 53 (3392/4276 chunks)
+2026-05-27 15:19:49.789 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 54 (3456/4276 chunks)
+2026-05-27 15:19:53.205 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 55 (3520/4276 chunks)
+2026-05-27 15:19:55.869 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 56 (3584/4276 chunks)
+2026-05-27 15:19:59.077 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 57 (3648/4276 chunks)
+2026-05-27 15:20:02.313 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 58 (3712/4276 chunks)
+2026-05-27 15:20:05.680 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 59 (3776/4276 chunks)
+2026-05-27 15:20:09.010 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 60 (3840/4276 chunks)
+2026-05-27 15:20:12.432 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 61 (3904/4276 chunks)
+2026-05-27 15:20:15.842 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 62 (3968/4276 chunks)
+2026-05-27 15:20:19.199 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 63 (4032/4276 chunks)
+2026-05-27 15:20:22.548 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 64 (4096/4276 chunks)
+2026-05-27 15:20:25.479 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 65 (4160/4276 chunks)
+2026-05-27 15:20:28.492 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 66 (4224/4276 chunks)
+2026-05-27 15:20:31.205 | INFO     | ingestion.vector_store:add_nodes:109 -   Stored batch 67 (4276/4276 chunks)
+2026-05-27 15:20:31.207 | SUCCESS  | ingestion.vector_store:add_nodes:111 - Ingestion complete. Total chunks in DB: 4276
+2026-05-27 15:20:31.338 | SUCCESS  | __main__:run_ingestion:57 - ChromaDB: 4276 chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-27 15:20:32.663 | SUCCESS  | ingestion.hybrid_retriever:_load_reranker:49 - Cross-encoder reranker loaded.
+2026-05-27 15:20:32.663 | INFO     | ingestion.hybrid_retriever:build_bm25_index:55 - Building BM25 index over 4276 chunks...
+2026-05-27 15:20:33.020 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:59 - BM25 index built.
+2026-05-27 15:20:33.020 | INFO     | __main__:run_ingestion:71 - Running smoke test queries...
+2026-05-27 15:20:34.564 | SUCCESS  | __main__:run_ingestion:98 - Done in 230.4s
+2026-05-27 15:25:57.702 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 659 sections from ipc_1860.pdf
+2026-05-27 15:25:58.276 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 672 sections from crpc.pdf
+2026-05-27 15:25:58.940 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 838 sections from constitution_2024.pdf
+2026-05-27 15:25:58.975 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 32 sections from rti_2005.pdf
+2026-05-27 15:25:59.033 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 47 sections from consumer.pdf
+2026-05-27 15:25:59.071 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 39 sections from pocso.pdf
+2026-05-27 15:25:59.100 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 35 sections from domestic_violence.pdf
+2026-05-27 15:25:59.324 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 283 sections from ibc.pdf
+2026-05-27 15:25:59.324 | INFO     | ingestion.pdf_parser:parse_all_pdfs:252 - Total sections parsed across all acts: 2605
+2026-05-27 15:25:59.352 | INFO     | ingestion.chunker:chunk:49 -   Indian Penal Code: 795 section chunks
+2026-05-27 15:25:59.389 | INFO     | ingestion.chunker:chunk:49 -   Code of Criminal Procedure: 976 section chunks
+2026-05-27 15:25:59.435 | INFO     | ingestion.chunker:chunk:49 -   Constitution of India: 1311 section chunks
+2026-05-27 15:25:59.439 | INFO     | ingestion.chunker:chunk:49 -   Right to Information Act: 106 section chunks
+2026-05-27 15:25:59.448 | INFO     | ingestion.chunker:chunk:49 -   Consumer Protection Act: 208 section chunks
+2026-05-27 15:25:59.451 | INFO     | ingestion.chunker:chunk:49 -   POCSO Act: 98 section chunks
+2026-05-27 15:25:59.453 | INFO     | ingestion.chunker:chunk:49 -   Domestic Violence Act: 46 section chunks
+2026-05-27 15:25:59.478 | INFO     | ingestion.chunker:chunk:49 -   Insolvency and Bankruptcy Code: 736 section chunks
+2026-05-27 15:25:59.478 | SUCCESS  | ingestion.chunker:chunk:58 - Generated 4276 section-based chunks total
+2026-05-27 15:25:59.478 | INFO     | __main__:run_ingestion:46 - Generated 4276 section-based chunks
+2026-05-27 15:25:59.478 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:26:03.747 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 4276 chunks
+2026-05-27 15:26:03.899 | INFO     | ingestion.vector_store:add_nodes:88 - All chunks already in DB.
+2026-05-27 15:26:03.958 | SUCCESS  | __main__:run_ingestion:57 - ChromaDB: 4276 chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-27 15:26:05.324 | SUCCESS  | ingestion.hybrid_retriever:_load_reranker:69 - Cross-encoder reranker loaded.
+2026-05-27 15:26:05.324 | INFO     | ingestion.hybrid_retriever:build_bm25_index:75 - Building BM25 index over 4276 chunks...
+2026-05-27 15:26:05.580 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:79 - BM25 index built.
+2026-05-27 15:26:05.580 | INFO     | __main__:run_ingestion:71 - Running smoke test queries...
+2026-05-27 15:26:06.860 | DEBUG    | ingestion.hybrid_retriever:_expand_query:141 - Query expanded: 'How to file an RTI application? Right to Information Act'
+2026-05-27 15:26:06.860 | INFO     | ingestion.hybrid_retriever:retrieve:92 - Auto act_filter set to: 'Right to Information Act' from query acronym
+2026-05-27 15:26:07.722 | SUCCESS  | __main__:run_ingestion:98 - Done in 10.3s
+2026-05-27 15:28:35.511 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 659 sections from ipc_1860.pdf
+2026-05-27 15:28:36.063 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 672 sections from crpc.pdf
+2026-05-27 15:28:36.733 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 838 sections from constitution_2024.pdf
+2026-05-27 15:28:36.769 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 32 sections from rti_2005.pdf
+2026-05-27 15:28:36.824 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 47 sections from consumer.pdf
+2026-05-27 15:28:36.863 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 39 sections from pocso.pdf
+2026-05-27 15:28:36.893 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 35 sections from domestic_violence.pdf
+2026-05-27 15:28:37.115 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 283 sections from ibc.pdf
+2026-05-27 15:28:37.116 | INFO     | ingestion.pdf_parser:parse_all_pdfs:252 - Total sections parsed across all acts: 2605
+2026-05-27 15:28:37.142 | INFO     | ingestion.chunker:chunk:49 -   Indian Penal Code: 795 section chunks
+2026-05-27 15:28:37.178 | INFO     | ingestion.chunker:chunk:49 -   Code of Criminal Procedure: 976 section chunks
+2026-05-27 15:28:37.227 | INFO     | ingestion.chunker:chunk:49 -   Constitution of India: 1311 section chunks
+2026-05-27 15:28:37.232 | INFO     | ingestion.chunker:chunk:49 -   Right to Information Act: 106 section chunks
+2026-05-27 15:28:37.239 | INFO     | ingestion.chunker:chunk:49 -   Consumer Protection Act: 208 section chunks
+2026-05-27 15:28:37.244 | INFO     | ingestion.chunker:chunk:49 -   POCSO Act: 98 section chunks
+2026-05-27 15:28:37.246 | INFO     | ingestion.chunker:chunk:49 -   Domestic Violence Act: 46 section chunks
+2026-05-27 15:28:37.271 | INFO     | ingestion.chunker:chunk:49 -   Insolvency and Bankruptcy Code: 736 section chunks
+2026-05-27 15:28:37.272 | SUCCESS  | ingestion.chunker:chunk:58 - Generated 4276 section-based chunks total
+2026-05-27 15:29:01.929 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 659 sections from ipc_1860.pdf
+2026-05-27 15:29:01.930 | INFO     | ingestion.pdf_parser:parse_all_pdfs:252 - Total sections parsed across all acts: 659
+2026-05-27 15:29:01.956 | INFO     | ingestion.chunker:chunk:49 -   Indian Penal Code: 795 section chunks
+2026-05-27 15:29:01.957 | SUCCESS  | ingestion.chunker:chunk:58 - Generated 795 section-based chunks total
+2026-05-27 15:29:01.957 | INFO     | __main__:run_ingestion:46 - Generated 795 section-based chunks
+2026-05-27 15:29:01.957 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:29:06.845 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 4276 chunks
+2026-05-27 15:29:06.870 | INFO     | ingestion.vector_store:add_nodes:88 - All chunks already in DB.
+2026-05-27 15:29:06.931 | SUCCESS  | __main__:run_ingestion:57 - ChromaDB: 4276 chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-27 15:29:08.259 | SUCCESS  | ingestion.hybrid_retriever:_load_reranker:69 - Cross-encoder reranker loaded.
+2026-05-27 15:29:08.259 | INFO     | ingestion.hybrid_retriever:build_bm25_index:75 - Building BM25 index over 4276 chunks...
+2026-05-27 15:29:08.507 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:79 - BM25 index built.
+2026-05-27 15:29:08.508 | INFO     | __main__:run_ingestion:71 - Running smoke test queries...
+2026-05-27 15:29:09.554 | DEBUG    | ingestion.hybrid_retriever:_expand_query:141 - Query expanded: 'How to file an RTI application? Right to Information Act'
+2026-05-27 15:29:09.555 | INFO     | ingestion.hybrid_retriever:retrieve:92 - Auto act_filter set to: 'Right to Information Act' from query acronym
+2026-05-27 15:29:10.395 | SUCCESS  | __main__:run_ingestion:98 - Done in 8.8s
+2026-05-27 15:29:27.697 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:29:32.270 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 4276 chunks
+2026-05-27 15:30:39.229 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 659 sections from ipc_1860.pdf
+2026-05-27 15:30:39.774 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 672 sections from crpc.pdf
+2026-05-27 15:30:40.448 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 838 sections from constitution_2024.pdf
+2026-05-27 15:30:40.487 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 32 sections from rti_2005.pdf
+2026-05-27 15:30:40.544 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 47 sections from consumer.pdf
+2026-05-27 15:30:40.584 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 39 sections from pocso.pdf
+2026-05-27 15:30:40.612 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 35 sections from domestic_violence.pdf
+2026-05-27 15:30:40.833 | SUCCESS  | ingestion.pdf_parser:parse:112 - Parsed 283 sections from ibc.pdf
+2026-05-27 15:30:40.834 | INFO     | ingestion.pdf_parser:parse_all_pdfs:252 - Total sections parsed across all acts: 2605
+2026-05-27 15:30:40.861 | INFO     | ingestion.chunker:chunk:49 -   Indian Penal Code: 795 section chunks
+2026-05-27 15:30:40.899 | INFO     | ingestion.chunker:chunk:49 -   Code of Criminal Procedure: 976 section chunks
+2026-05-27 15:30:40.947 | INFO     | ingestion.chunker:chunk:49 -   Constitution of India: 1311 section chunks
+2026-05-27 15:30:40.951 | INFO     | ingestion.chunker:chunk:49 -   Right to Information Act: 106 section chunks
+2026-05-27 15:30:40.960 | INFO     | ingestion.chunker:chunk:49 -   Consumer Protection Act: 208 section chunks
+2026-05-27 15:30:40.963 | INFO     | ingestion.chunker:chunk:49 -   POCSO Act: 98 section chunks
+2026-05-27 15:30:40.965 | INFO     | ingestion.chunker:chunk:49 -   Domestic Violence Act: 46 section chunks
+2026-05-27 15:30:40.990 | INFO     | ingestion.chunker:chunk:49 -   Insolvency and Bankruptcy Code: 736 section chunks
+2026-05-27 15:30:40.991 | SUCCESS  | ingestion.chunker:chunk:58 - Generated 4276 section-based chunks total
+2026-05-27 15:30:40.991 | INFO     | ingest:run_ingestion:46 - Generated 4276 section-based chunks
+2026-05-27 15:30:40.991 | INFO     | ingestion.vector_store:__init__:34 - Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+2026-05-27 15:30:45.750 | INFO     | ingestion.vector_store:__init__:49 - ChromaDB collection 'indian_legal_corpus' ready. Current size: 4276 chunks
+2026-05-27 15:30:45.899 | INFO     | ingestion.vector_store:add_nodes:88 - All chunks already in DB.
+2026-05-27 15:30:45.959 | SUCCESS  | ingest:run_ingestion:57 - ChromaDB: 4276 chunks | 8 acts: Code of Criminal Procedure, Constitution of India, Consumer Protection Act, Domestic Violence Act, Indian Penal Code, Insolvency and Bankruptcy Code, POCSO Act, Right to Information Act
+2026-05-27 15:30:47.495 | SUCCESS  | ingestion.hybrid_retriever:_load_reranker:69 - Cross-encoder reranker loaded.
+2026-05-27 15:30:47.495 | INFO     | ingestion.hybrid_retriever:build_bm25_index:75 - Building BM25 index over 4276 chunks...
+2026-05-27 15:30:47.742 | SUCCESS  | ingestion.hybrid_retriever:build_bm25_index:79 - BM25 index built.
+2026-05-27 15:30:47.743 | INFO     | ingest:run_ingestion:71 - Running smoke test queries...
+2026-05-27 15:30:48.986 | DEBUG    | ingestion.hybrid_retriever:_expand_query:141 - Query expanded: 'How to file an RTI application? Right to Information Act'
+2026-05-27 15:30:48.987 | INFO     | ingestion.hybrid_retriever:retrieve:92 - Auto act_filter set to: 'Right to Information Act' from query acronym
+2026-05-27 15:30:49.848 | SUCCESS  | ingest:run_ingestion:98 - Done in 10.9s
+2026-05-27 15:30:49.854 | INFO     | __main__:evaluate_retrieval:89 - Evaluating: What is the punishment for murder under IPC?...
+2026-05-27 15:30:49.854 | DEBUG    | ingestion.hybrid_retriever:_expand_query:141 - Query expanded: 'What is the punishment for murder under IPC? Indian Penal Code'
+2026-05-27 15:30:49.855 | INFO     | ingestion.hybrid_retriever:retrieve:92 - Auto act_filter set to: 'Indian Penal Code' from query acronym
+2026-05-27 15:30:50.412 | INFO     | __main__:evaluate_retrieval:89 - Evaluating: How do I file an RTI application?...
+2026-05-27 15:30:50.413 | DEBUG    | ingestion.hybrid_retriever:_expand_query:141 - Query expanded: 'How do I file an RTI application? Right to Information Act'
+2026-05-27 15:30:50.413 | INFO     | ingestion.hybrid_retriever:retrieve:92 - Auto act_filter set to: 'Right to Information Act' from query acronym
+2026-05-27 15:30:50.566 | INFO     | __main__:evaluate_retrieval:89 - Evaluating: What are my rights if arrested by police?...
+2026-05-27 15:30:51.251 | INFO     | __main__:evaluate_retrieval:89 - Evaluating: Can I get a refund for a defective product?...
+2026-05-27 15:30:51.669 | INFO     | __main__:evaluate_retrieval:89 - Evaluating: महिला को घरेलू हिंसा से कैसे बचाया जा सकता है?...

@@ -1,0 +1,10 @@
+services:
+  - type: web
+
+    name: legal-ai-backend
+
+    env: docker
+
+    plan: free
+
+    autoDeploy: true
