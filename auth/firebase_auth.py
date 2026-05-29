@@ -1,4 +1,5 @@
 import os
+import json
 
 import firebase_admin
 
@@ -18,57 +19,27 @@ from fastapi.security import (
 )
 
 # ─────────────────────────────────────────────
-# Firebase Initialization (Production Safe)
+# Firebase Initialization
 # ─────────────────────────────────────────────
 
-firebase_credentials = {
+firebase_json = os.getenv(
+    "FIREBASE_CREDENTIALS"
+)
 
-    "type":
-        "service_account",
+if not firebase_json:
 
-    "project_id":
-        os.getenv(
-            "FIREBASE_PROJECT_ID"
-        ),
+    raise ValueError(
+        "FIREBASE_CREDENTIALS not found"
+    )
 
-    "private_key":
-    (
-        os.getenv(
-            "FIREBASE_PRIVATE_KEY"
-        ).replace(
-            "\\n",
-            "\n"
-        )
-        ),
-
-    "client_email":
-        os.getenv(
-            "FIREBASE_CLIENT_EMAIL"
-        ),
-
-    "private_key_id": os.getenv("FIREBASE_PRIVATE_KEY_ID"),
-
-    "client_id": os.getenv("FIREBASE_CLIENT_ID"),
-
-    "auth_uri":
-        os.getenv("FIREBASE_AUTH_URI"),
-
-    "token_uri": os.getenv("FIREBASE_TOKEN_URI"),
-
-    "auth_provider_x509_cert_url": os.getenv("FIREBASE_AUTH_PROVIDER_X509_CERT_URL"),
-
-    "client_x509_cert_url": os.getenv("FIREBASE_CLIENT_X509_CERT_URL"),
-
-    "universe_domain":        os.getenv(
-            "FIREBASE_UNIVERSE_DOMAIN"
-        ),
-}
+firebase_credentials = json.loads(
+    firebase_json
+)
 
 cred = credentials.Certificate(
     firebase_credentials
 )
 
-# Prevent duplicate initialization
 if not firebase_admin._apps:
 
     firebase_admin.initialize_app(
